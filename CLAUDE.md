@@ -1,13 +1,66 @@
-# MazyOS — Sistema operacional do negócio
+# Adrian — MazyOS
 
-Sua empresa roda em cima desse arquivo. Aqui ficam as regras de operação
-do MazyOS — como o Claude lê o contexto, aprende com correções, mantém
-tudo atualizado e cria skills novas conforme a operação evolui.
+> Operação freelancer. Aqui ficam os clientes, briefings, entregas e o
+> processo de trabalho do Adrian criando sites com Claude Code.
 
-Esse arquivo é editável. Quando o `/instalar` rodar, ele complementa o
-final dessa página com as regras específicas do seu negócio.
+## O que é esse workspace
+
+Operação freelancer de criação de sites. Aqui ficam os clientes, briefings,
+entregas e o processo de trabalho.
+
+**Estrutura de pastas:**
+- `_memoria/` — quem sou, como falo, foco atual
+- `identidade/` — minha marca pessoal aplicada nas entregas (ainda em branco)
+- `marketing/` — meu próprio conteúdo (Insta, LinkedIn, portfolio)
+- `saidas/` — emails, documentos pontuais
+- `dados/` — arquivos a analisar
+- `scripts/` — automações do sistema
+
+## Quem sou
+
+Adrian, freelancer começando agora a criar sites, usando Claude Code como
+ferramenta principal de construção.
+
+## Meu serviço
+
+- Sites institucionais simples para negócios locais
+- Vitrine de serviços e portfólio/galeria
+- Contato direto integrado (WhatsApp, Instagram)
+
+## Clientes ativos
+
+- **Era Uma Vez - Recreação Infantil** — primeiro projeto (teste/portfólio).
+  Site simples mostrando serviços prestados e as recreações feitas, com
+  links clicáveis pro WhatsApp e Instagram. Referências de estilo:
+  brincalala.com.br e recreacaobehappy.com.br.
+
+## Como trabalho
+
+Ainda definindo o processo — primeiro projeto em andamento.
+
+## Tom de voz
+
+Direto e informal, frase corrida, sem enrolação.
+
+Evitar: emoji em excesso, jargão de guru de marketing.
+
+## Regras do sistema
+
+- Cliente novo → considerar criar pasta própria pro projeto (via `/novo-projeto`)
+- Outras regras que aparecerem com o uso
+
+## Ferramentas conectadas
+
+- [ ] Notion
+- [ ] Gmail
+- [ ] Google Calendar
+- [ ] Stripe / cobrança
+
+*(Marcar conforme for instalando os MCPs)*
 
 ---
+
+# Regras de operação do MazyOS
 
 ## Contexto do negócio
 
