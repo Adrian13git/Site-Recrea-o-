@@ -5,9 +5,8 @@ recreacaobehappy.com.br, usando a paleta de cores da marca.
 
 ## O que falta pra ficar pronto
 
-- [ ] Número real do WhatsApp — trocar `55SEUNUMEROAQUI` em `index.html`
-      (formato: `55` + DDD + número, só dígitos)
-- [ ] Handle real do Instagram — trocar `SEUINSTAGRAMAQUI` em `index.html`
+- [x] Número real do WhatsApp — +55 19 99121-5121
+- [x] Handle real do Instagram — @_eraumavezrecreacao
 - [ ] Lista real de serviços (seção "Serviços") — hoje tem 4 exemplos genéricos
 - [ ] Fotos reais das recreações — jogar em `img/` e trocar os placeholders
       da seção "Recreações"

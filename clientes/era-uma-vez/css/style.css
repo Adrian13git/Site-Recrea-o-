@@ -19,7 +19,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
 body {
   font-family: var(--font-body);
@@ -59,7 +59,9 @@ h1, h2, h3 {
 
 /* Buttons */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-title);
   font-weight: 600;
   text-decoration: none;
@@ -68,6 +70,7 @@ h1, h2, h3 {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .btn:hover { transform: translateY(-2px); }
+.btn svg { flex-shrink: 0; }
 
 .btn--primary {
   background: var(--color6);
@@ -253,7 +256,14 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
   gap: 16px;
 }
 .footer__social { display: flex; gap: 20px; }
-.footer__social a { color: var(--color6); text-decoration: none; font-weight: 600; }
+.footer__social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color6);
+  text-decoration: none;
+  font-weight: 600;
+}
 .footer__social a:hover { color: var(--color5); }
 .footer p { width: 100%; text-align: center; color: rgba(248, 254, 244, 0.8); font-weight: 600; font-size: 0.85rem; margin-top: 8px; }
 

@@ -12,14 +12,16 @@ Começando agora. Primeiro projeto (teste/portfólio) em andamento: site pra Era
 
 Entregar o site da Era Uma Vez - Recreação Infantil: serviços prestados, galeria das recreações, links diretos pro WhatsApp e Instagram, usando a paleta de cores definida.
 
-**Status (13/08/2026):** site em `clientes/era-uma-vez/` já estruturado e funcional
-(header, hero, sobre, serviços, recreações, contato, footer), com fundo roxo da
-marca, logos aplicados (`img/logo-marca.png` e `img/logo-texto.png`) e textos do
-hero e do "Sobre" já finalizados. Falta pra ficar pronto pra publicar:
+**Status (14/08/2026):** site em `clientes/era-uma-vez/` estruturado e funcional
+(header, hero, sobre, serviços, recreações, contato, footer), fundo roxo da marca,
+logos aplicados (`img/logo-marca.png` e `img/logo-texto.png`), textos revisados
+(hero, sobre, cards de serviço) e menu reordenado (Sobre, Serviços, Recreações,
+Contato — página segue a mesma ordem). WhatsApp (+55 19 99121-5121) e Instagram
+(@_eraumavezrecreacao) conectados em todos os botões, com ícone ao lado do texto
+e mensagem pré-preenchida no WhatsApp ("Olá, vim através do seu site e gostaria
+de saber mais sobre os serviços de recreação."). Falta pra ficar pronto pra publicar:
 
-- Número real do WhatsApp (hoje é placeholder `55SEUNUMEROAQUI` no `index.html`)
-- Handle real do Instagram (hoje é placeholder `SEUINSTAGRAMAQUI`)
-- Lista real de serviços (seção "Serviços" ainda tem 4 exemplos genéricos)
+- Confirmar/ajustar a lista de serviços (4 cards atuais ainda podem ser exemplo)
 - Fotos reais das recreações (galeria ainda tem placeholders "Foto 1"–"Foto 6")
 
 Checklist completo em `clientes/era-uma-vez/README.md`.
