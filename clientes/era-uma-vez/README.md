@@ -8,9 +8,11 @@ recreacaobehappy.com.br, usando a paleta de cores da marca.
 - [x] Número real do WhatsApp — +55 19 99121-5121
 - [x] Handle real do Instagram — @_eraumavezrecreacao
 - [ ] Lista real de serviços (seção "Serviços") — hoje tem 4 exemplos genéricos
-- [ ] Fotos reais das recreações — jogar em `img/` e trocar os placeholders
-      da seção "Recreações"
+- [~] Fotos/vídeos reais das recreações — 2 vídeos das oficinas já estão em
+      `video/`, ainda faltam mais fotos/vídeos pra preencher os 4 espaços
+      restantes da galeria (jogar em `img/` ou `video/` que eu troco aqui)
 - [x] Texto real da seção "Sobre" — história da empresa
+- [x] Seção "O que nossos clientes dizem" com 6 prints reais de feedback (`img/feedbacks/`)
 
 ## Paleta usada
 
