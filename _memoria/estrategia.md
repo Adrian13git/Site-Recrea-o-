@@ -22,13 +22,22 @@ botões, com ícone e mensagem pré-preenchida no WhatsApp. Seção "Recreaçõe
 tem 2 vídeos reais das oficinas (`video/`); seção nova "O que nossos clientes
 dizem" com 6 prints de feedback reais (`img/feedbacks/`), alternando fundo
 claro/escuro, navegação por setas. Área de atendimento adicionada no Contato:
-"Atendemos Mococa (SP) e cidades próximas com taxa de deslocamento." Falta pra
-ficar 100% pronto pra publicar:
+"Atendemos Mococa (SP) e cidades próximas com taxa de deslocamento."
+
+**Atualização (21/09/2026):** galeria "Recreações" com 6 vídeos reais das
+oficinas (comprimidos com ffmpeg, 36MB→15,7MB sem perda visível de qualidade),
+em formato vertical 9:16 (igual ao original, sem corte) numa fileira única
+navegada por setas — mesmo padrão da seção "Feedbacks", que já tem 8 prints
+reais. Cards de "Serviços" ganharam foto de fundo bem clara, uma por serviço
+(`img/servico-*`). Seção "Sobre" ganhou foto de fundo clara também
+(`img/sobre-bg.jpg`). Falta pra ficar 100% pronto pra publicar:
 
 - Confirmar/ajustar a lista de serviços (4 cards atuais ainda podem ser exemplo)
-- Mais fotos/vídeos das recreações (galeria ainda tem 4 placeholders "Foto 3"–"Foto 6")
 
 Checklist completo em `clientes/era-uma-vez/README.md`.
+
+**Nota técnica:** ffmpeg foi instalado no sistema (via winget) pra processar
+vídeo/imagem — útil pra próximas compressões ou recortes.
 
 ## O que pode esperar
 

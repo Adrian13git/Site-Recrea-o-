@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
 
@@ -58,22 +58,22 @@
     <div class="container">
       <h2>Serviços</h2>
       <div class="cards">
-        <article class="card">
+        <article class="card" style="background-image: linear-gradient(rgba(255,255,255,.88), rgba(255,255,255,.88)), url('img/servico-festas.webp')">
           <div class="card__icon">🎈</div>
           <h3>Festas infantis</h3>
           <p>Recreação completa pro dia da festa, com brincadeiras, jogos e animação do início ao fim.</p>
         </article>
-        <article class="card">
+        <article class="card" style="background-image: linear-gradient(rgba(255,255,255,.88), rgba(255,255,255,.88)), url('img/servico-aniversarios.jpg')">
           <div class="card__icon">🎂</div>
           <h3>Aniversários</h3>
           <p>Pacotes pensados para a idade de cada criança, com atividades sob medida para toda a turma.</p>
         </article>
-        <article class="card">
+        <article class="card" style="background-image: linear-gradient(rgba(255,255,255,.88), rgba(255,255,255,.88)), url('img/servico-eventos.jpg')">
           <div class="card__icon">🏫</div>
           <h3>Eventos escolares</h3>
           <p>Recreação dentro das escolas, dia das crianças, festa junina e datas comemorativas na escola.</p>
         </article>
-        <article class="card">
+        <article class="card" style="background-image: linear-gradient(rgba(255,255,255,.88), rgba(255,255,255,.88)), url('img/servico-oficinas.jpg')">
           <div class="card__icon">🎨</div>
           <h3>Oficinas criativas</h3>
           <p>Atividades de arte e criatividade que prendem a atenção e divertem em grupo.</p>
@@ -86,27 +86,39 @@
   <section class="recreacoes panel" id="recreacoes">
     <div class="container">
       <h2>O que já rolou por aqui</h2>
-      <div class="galeria">
-        <div class="galeria__item">
-          <video controls playsinline preload="metadata" src="video/video-oficina-1.mp4"></video>
+      <div class="carousel">
+        <button class="carousel__arrow" id="galeriaPrev" aria-label="Vídeo anterior">&#8249;</button>
+        <div class="galeria" id="galeriaRow">
+          <div class="galeria__item">
+            <video controls playsinline preload="metadata" src="video/video-oficina-1.mp4"></video>
+          </div>
+          <div class="galeria__item">
+            <video controls playsinline preload="metadata" src="video/video-oficina-2.mp4"></video>
+          </div>
+          <div class="galeria__item">
+            <video controls playsinline preload="metadata" src="video/video-oficina-3.mp4"></video>
+          </div>
+          <div class="galeria__item">
+            <video controls playsinline preload="metadata" src="video/video-oficina-4.mp4"></video>
+          </div>
+          <div class="galeria__item">
+            <video controls playsinline preload="metadata" src="video/video-oficina-5.mp4"></video>
+          </div>
+          <div class="galeria__item">
+            <video controls playsinline preload="metadata" src="video/video-oficina-6.mp4"></video>
+          </div>
         </div>
-        <div class="galeria__item">
-          <video controls playsinline preload="metadata" src="video/video-oficina-2.mp4"></video>
-        </div>
-        <div class="galeria__item ph">Foto 3</div>
-        <div class="galeria__item ph">Foto 4</div>
-        <div class="galeria__item ph">Foto 5</div>
-        <div class="galeria__item ph">Foto 6</div>
+        <button class="carousel__arrow" id="galeriaNext" aria-label="Próximo vídeo">&#8250;</button>
       </div>
-      <p class="servicos__nota">* Espaços reservados — me manda mais fotos e vídeos das recreações que eu vou trocando aqui.</p>
+      <p class="servicos__nota">* Manda mais fotos e vídeos das recreações sempre que quiser que eu vou adicionando aqui.</p>
     </div>
   </section>
 
   <section class="feedbacks panel" id="feedbacks">
     <div class="container">
       <h2>O que nossos clientes dizem</h2>
-      <div class="feedbacks__carousel">
-        <button class="feedbacks__arrow feedbacks__arrow--prev" id="feedbackPrev" aria-label="Feedback anterior">&#8249;</button>
+      <div class="carousel">
+        <button class="carousel__arrow" id="feedbackPrev" aria-label="Feedback anterior">&#8249;</button>
         <div class="feedbacks__row" id="feedbacksRow">
           <img class="feedbacks__item" src="img/feedbacks/feedback-1.jpeg" alt="Feedback de cliente sobre a recreação">
           <img class="feedbacks__item" src="img/feedbacks/feedback-4.jpeg" alt="Feedback de cliente sobre a recreação">
@@ -114,8 +126,10 @@
           <img class="feedbacks__item" src="img/feedbacks/feedback-5.jpeg" alt="Feedback de cliente sobre a recreação">
           <img class="feedbacks__item" src="img/feedbacks/feedback-3.jpeg" alt="Feedback de cliente sobre a recreação">
           <img class="feedbacks__item" src="img/feedbacks/feedback-6.jpeg" alt="Feedback de cliente sobre a recreação">
+          <img class="feedbacks__item" src="img/feedbacks/feedback-7.jpeg?v=2" alt="Feedback de cliente sobre a recreação">
+          <img class="feedbacks__item" src="img/feedbacks/feedback-8.jpeg?v=2" alt="Feedback de cliente sobre a recreação">
         </div>
-        <button class="feedbacks__arrow feedbacks__arrow--next" id="feedbackNext" aria-label="Próximo feedback">&#8250;</button>
+        <button class="carousel__arrow" id="feedbackNext" aria-label="Próximo feedback">&#8250;</button>
       </div>
     </div>
   </section>
@@ -154,14 +168,19 @@
   const nav = document.getElementById('nav');
   toggle.addEventListener('click', () => nav.classList.toggle('nav--open'));
 
-  const feedbacksRow = document.getElementById('feedbacksRow');
-  const scrollFeedbacks = (dir) => {
-    const item = feedbacksRow.querySelector('.feedbacks__item');
+  const scrollRow = (row, itemSelector, dir) => {
+    const item = row.querySelector(itemSelector);
     const step = (item.offsetWidth + 18) * dir;
-    feedbacksRow.scrollBy({ left: step, behavior: 'smooth' });
+    row.scrollBy({ left: step, behavior: 'smooth' });
   };
-  document.getElementById('feedbackPrev').addEventListener('click', () => scrollFeedbacks(-1));
-  document.getElementById('feedbackNext').addEventListener('click', () => scrollFeedbacks(1));
+
+  const feedbacksRow = document.getElementById('feedbacksRow');
+  document.getElementById('feedbackPrev').addEventListener('click', () => scrollRow(feedbacksRow, '.feedbacks__item', -1));
+  document.getElementById('feedbackNext').addEventListener('click', () => scrollRow(feedbacksRow, '.feedbacks__item', 1));
+
+  const galeriaRow = document.getElementById('galeriaRow');
+  document.getElementById('galeriaPrev').addEventListener('click', () => scrollRow(galeriaRow, '.galeria__item', -1));
+  document.getElementById('galeriaNext').addEventListener('click', () => scrollRow(galeriaRow, '.galeria__item', 1));
 </script>
 
 </body>
