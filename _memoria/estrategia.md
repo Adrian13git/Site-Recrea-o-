@@ -36,8 +36,27 @@ reais. Cards de "Serviços" ganharam foto de fundo bem clara, uma por serviço
 
 Checklist completo em `clientes/era-uma-vez/README.md`.
 
-**Nota técnica:** ffmpeg foi instalado no sistema (via winget) pra processar
-vídeo/imagem — útil pra próximas compressões ou recortes.
+**Nota técnica:** ffmpeg e ImageMagick foram instalados no sistema (via winget)
+pra processar vídeo/imagem — úteis pra próximas compressões, recortes ou
+remoção de fundo (o ImageMagick com floodfill a partir dos cantos é o método
+que funcionou bem pra remover fundo falso/checkerboard sem furar detalhes
+brancos do personagem, tipo dentes e olhos).
+
+**Atualização (22/09/2026):** adicionada mascote ilustrada da Era Uma Vez
+(gerada em IA, `_memoria`/pasta `animações` do usuário) flutuando no espaço
+roxo entre as seções — 3 poses aplicadas: pintando o rosto de uma criança
+(entre Sobre/Serviços), jogo do paraquedas colorido (entre Serviços/Recreações)
+e corrida de saco (entre Recreações/Feedbacks). Também foram adicionadas
+formas decorativas flutuantes (bolinhas e estrelas em CSS puro, sem imagem)
+no fundo roxo do Hero, do CTA final e do rodapé. Nota de cuidado: algumas
+poses testadas tiveram um bug visual de corte/faixa roxa no meio da imagem
+ao usar sobreposição com margem negativa (`.floating-mascote--right`) —
+poses com braços/pernas muito abertos perto da borda do recorte pareciam
+disparar isso; poses mais compactas (corpo mais "fechado", sem membros
+esticados perto da borda) resolveram na prática. Se o problema voltar a
+aparecer, vale revisitar a técnica de posicionamento (a versão sem margem
+negativa/sombra, mais simples, nunca chegou a ser confirmada como resolvendo
+ou não, pois o usuário preferiu voltar ao visual anterior antes de testar).
 
 ## O que pode esperar
 
