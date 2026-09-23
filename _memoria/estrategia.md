@@ -58,6 +58,44 @@ aparecer, vale revisitar a técnica de posicionamento (a versão sem margem
 negativa/sombra, mais simples, nunca chegou a ser confirmada como resolvendo
 ou não, pois o usuário preferiu voltar ao visual anterior antes de testar).
 
+**Atualização (23/09/2026):** instalada a skill `frontend-design` (via
+`npx claude-code-templates@latest --skill creative-design/frontend-design`) e
+aplicada uma passada de otimização no site todo. Mudanças da sessão:
+
+- Resolvido (de vez, ao que parece) o bug histórico da "faixa roxa cortando a
+  mascote": as 3 mascotes flutuantes deixaram de ficar entre as seções (na
+  área roxa, com margem negativa fazendo sobreposição) e passaram a ficar
+  dentro do próprio painel branco, no fim de cada seção — pedido do usuário
+  pra elas nunca tocarem a parte roxa. Como não há mais sobreposição, o bug
+  não tem mais como ocorrer estruturalmente. Tamanho aumentado depois (100px
+  → 148px) a pedido do usuário.
+- Cards de "Serviços" ganharam ícones com fundo colorido (alternando cores da
+  marca) e hover com leve inclinação/elevação, pra fugir do "card genérico
+  todo igual" (ponto citado pela skill de design como clichê comum).
+- Adicionado contorno de foco visível (`:focus-visible`) em botões e links,
+  pra acessibilidade via teclado.
+- Removido CSS morto (`.eyebrow`, `.sobre__inner`, `.sobre__mascote` — de uma
+  versão antiga do layout que não existe mais no HTML).
+- Textos escuros (parágrafo do "Sobre", descrição dos cards) ficaram mais
+  escuros e em negrito mais forte (peso 700) — usuário achou que estavam
+  claros demais.
+- Removidas as duas notas com "*" que avisavam sobre texto de exemplo
+  (serviços) e pedido de mais mídia (recreações) — só o aviso visual saiu, a
+  lista de serviços real continua pendente.
+- Corrigido bug no vídeo do meio da galeria "Recreações": no celular, o botão
+  de play nativo não aparecia em alguns vídeos. Adicionado poster (thumbnail)
+  gerado via ffmpeg pra cada vídeo e um botão de play próprio (HTML/CSS/JS),
+  que não depende mais do comportamento nativo/inconsistente do navegador.
+
+**Nota sobre teste no celular:** testado o acesso ao site pelo celular do
+usuário (Samsung S24). Servidor local (`python -m http.server`) na mesma
+rede Wi-Fi não funcionou mesmo com regra de firewall liberada — provável
+isolamento de cliente/AP no roteador. Criar túnel externo (localtunnel) foi
+bloqueado pelas permissões do ambiente Claude Code (ação de rede sensível).
+Solução que funcionou: compactar a pasta do site em `.zip` e mandar pro
+celular por WhatsApp/Drive pra abrir o `index.html` localmente. Repetir esse
+processo sempre que o usuário quiser conferir algo no celular.
+
 ## O que pode esperar
 
 - Identidade visual própria (marca pessoal do Adrian) — ainda não definida, fica pra depois

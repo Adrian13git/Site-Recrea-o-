@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=13">
+<link rel="stylesheet" href="css/style.css?v=17">
 </head>
 <body>
 
@@ -62,12 +62,11 @@
         <h2>Diversão de verdade, com quem entende de criança</h2>
         <p>A Era Uma Vez nasceu em 2019 com um propósito simples: transformar a recreação em momentos de pura diversão. Desde então, levamos brincadeiras, carinho e segurança para festas e eventos. Cada brincadeira é pensada para proporcionar experiências incríveis para as crianças, cuidando de cada detalhe para que elas aproveitem de verdade e as famílias possam curtir cada instante com tranquilidade.</p>
       </div>
+      <div class="floating-mascote--right">
+        <img src="img/mascote-sobre.png?v=4" alt="Recreadora da Era Uma Vez pintando o rosto de uma criança">
+      </div>
     </div>
   </section>
-
-  <div class="floating-mascote--right container">
-    <img src="img/mascote-sobre.png?v=4" alt="Recreadora da Era Uma Vez pintando o rosto de uma criança">
-  </div>
 
   <section class="servicos panel" id="servicos">
     <div class="container">
@@ -94,13 +93,11 @@
           <p>Atividades de arte e criatividade que prendem a atenção e divertem em grupo.</p>
         </article>
       </div>
-      <p class="servicos__nota">* Textos de exemplo — me manda a lista real dos serviços que vocês oferecem pra eu ajustar aqui.</p>
+      <div class="floating-mascote--right">
+        <img src="img/mascote-bambole.png?v=5" alt="Recreadora da Era Uma Vez brincando de paraquedas colorido com as crianças">
+      </div>
     </div>
   </section>
-
-  <div class="floating-mascote--right container">
-    <img src="img/mascote-bambole.png?v=5" alt="Recreadora da Era Uma Vez brincando de paraquedas colorido com as crianças">
-  </div>
 
   <section class="recreacoes panel" id="recreacoes">
     <div class="container">
@@ -109,33 +106,37 @@
         <button class="carousel__arrow" id="galeriaPrev" aria-label="Vídeo anterior">&#8249;</button>
         <div class="galeria" id="galeriaRow">
           <div class="galeria__item">
-            <video controls playsinline preload="metadata" src="video/video-oficina-1.mp4"></video>
+            <video controls playsinline preload="metadata" poster="img/posters/oficina-1.jpg" src="video/video-oficina-1.mp4"></video>
+            <button class="galeria__play" aria-label="Reproduzir vídeo">&#9654;</button>
           </div>
           <div class="galeria__item">
-            <video controls playsinline preload="metadata" src="video/video-oficina-2.mp4"></video>
+            <video controls playsinline preload="metadata" poster="img/posters/oficina-2.jpg" src="video/video-oficina-2.mp4"></video>
+            <button class="galeria__play" aria-label="Reproduzir vídeo">&#9654;</button>
           </div>
           <div class="galeria__item">
-            <video controls playsinline preload="metadata" src="video/video-oficina-3.mp4"></video>
+            <video controls playsinline preload="metadata" poster="img/posters/oficina-3.jpg" src="video/video-oficina-3.mp4"></video>
+            <button class="galeria__play" aria-label="Reproduzir vídeo">&#9654;</button>
           </div>
           <div class="galeria__item">
-            <video controls playsinline preload="metadata" src="video/video-oficina-4.mp4"></video>
+            <video controls playsinline preload="metadata" poster="img/posters/oficina-4.jpg" src="video/video-oficina-4.mp4"></video>
+            <button class="galeria__play" aria-label="Reproduzir vídeo">&#9654;</button>
           </div>
           <div class="galeria__item">
-            <video controls playsinline preload="metadata" src="video/video-oficina-5.mp4"></video>
+            <video controls playsinline preload="metadata" poster="img/posters/oficina-5.jpg" src="video/video-oficina-5.mp4"></video>
+            <button class="galeria__play" aria-label="Reproduzir vídeo">&#9654;</button>
           </div>
           <div class="galeria__item">
-            <video controls playsinline preload="metadata" src="video/video-oficina-6.mp4"></video>
+            <video controls playsinline preload="metadata" poster="img/posters/oficina-6.jpg" src="video/video-oficina-6.mp4"></video>
+            <button class="galeria__play" aria-label="Reproduzir vídeo">&#9654;</button>
           </div>
         </div>
         <button class="carousel__arrow" id="galeriaNext" aria-label="Próximo vídeo">&#8250;</button>
       </div>
-      <p class="servicos__nota">* Manda mais fotos e vídeos das recreações sempre que quiser que eu vou adicionando aqui.</p>
+      <div class="floating-mascote--right">
+        <img src="img/mascote-roda.png?v=5" alt="Recreadora da Era Uma Vez brincando de corrida de saco com as crianças">
+      </div>
     </div>
   </section>
-
-  <div class="floating-mascote--right container">
-    <img src="img/mascote-roda.png?v=5" alt="Recreadora da Era Uma Vez brincando de corrida de saco com as crianças">
-  </div>
 
   <section class="feedbacks panel" id="feedbacks">
     <div class="container">
@@ -223,6 +224,15 @@
   const galeriaRow = document.getElementById('galeriaRow');
   document.getElementById('galeriaPrev').addEventListener('click', () => scrollRow(galeriaRow, '.galeria__item', -1));
   document.getElementById('galeriaNext').addEventListener('click', () => scrollRow(galeriaRow, '.galeria__item', 1));
+
+  document.querySelectorAll('.galeria__item').forEach((item) => {
+    const video = item.querySelector('video');
+    const playBtn = item.querySelector('.galeria__play');
+    playBtn.addEventListener('click', () => video.play());
+    video.addEventListener('play', () => item.classList.add('is-playing'));
+    video.addEventListener('pause', () => item.classList.remove('is-playing'));
+    video.addEventListener('ended', () => item.classList.remove('is-playing'));
+  });
 </script>
 
 </body>
