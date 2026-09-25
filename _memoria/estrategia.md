@@ -96,6 +96,18 @@ Solução que funcionou: compactar a pasta do site em `.zip` e mandar pro
 celular por WhatsApp/Drive pra abrir o `index.html` localmente. Repetir esse
 processo sempre que o usuário quiser conferir algo no celular.
 
+**Atualização (25/09/2026):** trocado o fundo da tela inicial (Hero) — antes
+degradê roxo liso, agora uma foto real de recreação (crianças brincando com
+pó colorido, arquivo do usuário em `capa do site/`, salva como
+`img/hero-bg.jpg`) com um degradê roxo semi-transparente por cima pra manter
+a identidade visual e a legibilidade do texto branco. Enquadramento ajustado
+(zoom 150%, posição 62% 22%) a pedido do usuário pra focar nas mãos/pó
+colorido. Também corrigido um espaço em branco indesejado entre o texto do
+"Sobre" e a mascote flutuante: a imagem `mascote-sobre.png` tinha ~15% de
+margem transparente sobrando no topo do próprio arquivo (herança do recorte
+do sprite-sheet original) — cortada com ImageMagick `-trim`, e reduzida a
+margem CSS também.
+
 ## O que pode esperar
 
 - Identidade visual própria (marca pessoal do Adrian) — ainda não definida, fica pra depois

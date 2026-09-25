@@ -133,7 +133,14 @@ h1, h2, h3 {
 }
 
 /* Hero */
-.hero { padding: 70px 0 60px; position: relative; overflow: hidden; }
+.hero {
+  padding: 70px 0 60px;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(165deg, rgba(116, 68, 228, 0.82) 0%, rgba(104, 59, 169, 0.82) 55%, rgba(79, 44, 133, 0.88) 100%),
+    url("../img/hero-bg.jpg") 62% 22% / 150% no-repeat;
+}
 
 .hero__inner {
   display: grid;
@@ -372,7 +379,7 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
 .floating-mascote--right {
   display: flex;
   justify-content: flex-end;
-  margin-top: 16px;
+  margin-top: 4px;
   pointer-events: none;
 }
 .floating-mascote--right img {
