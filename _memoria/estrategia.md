@@ -125,6 +125,45 @@ deploy:** configurar o "Root Directory" do projeto na Vercel apontando pra
 `MazyOS/clientes/era-uma-vez` — senão o resto da pasta MazyOS (memória interna
 do negócio, skills) fica exposto publicamente junto com o site.
 
+**Atualização (28/09/2026, deploy):** site publicado na Vercel (plano
+gratuito), conectado ao GitHub (`Adrian13git/Site-Recrea-o-`) com deploy
+automático a cada push — Root Directory configurado corretamente como
+`clientes/era-uma-vez` (o repo já tem a raiz em MazyOS, sem prefixo). A partir
+de agora, todo "salvar no GitHub" já reflete no site publicado em ~1 minuto,
+sem passo manual extra na Vercel.
+
+Depois do ar, o usuário testou pelo celular real (Samsung S24) e apareceram
+bugs que só se manifestam em tela estreita (não visíveis no navegador
+desktop usado até então):
+
+- Corrigido texto "Atendemos Mococa..." vazando pra fora da tela (faltava
+  permitir quebra de linha no ícone+texto dentro do flex).
+- Corrigido bug sério: as fileiras de vídeo/feedback (`.galeria`,
+  `.feedbacks__row`) encolhiam muito além do esperado em telas estreitas —
+  causa: são flex items com `overflow-x:auto` sem `flex:1;min-width:0`, e o
+  spec de flexbox permite que um container com overflow:auto encolha até
+  quase 0 (min-width automático vira ~0). Corrigido dando `flex:1 1 0%;
+  min-width:0` pras duas.
+- Depois de corrigir o encolhimento, vídeo/foto ainda ficavam pequenos e
+  com espaço roxo sobrando nas laterais no mobile — resolvido fazendo o
+  vídeo/foto ocupar `width:100%` do espaço disponível entre as setas (que já
+  ficam encostadas nas bordas do carrossel), ao invés de um tamanho
+  calculado em `vw`/`clamp` (impreciso, difícil de acertar o valor certo
+  pra todo tamanho de tela). Pro vídeo, a caixa usa `aspect-ratio:3/4` com
+  `object-fit:cover` (recorta as bordas, já era aceito antes). Pros
+  feedbacks, manteve-se **sem cortar** (`height:auto`, só a largura é fixa
+  em 100%) — importante não usar `object-fit:cover` nos prints de feedback,
+  o usuário já rejeitou isso antes por cortar texto das mensagens.
+- Adicionado botão de tela cheia nos vídeos da galeria (ícone de "expandir",
+  chama `video.requestFullscreen()`) e uma lightbox (visualização ampliada
+  com fundo escuro, fecha no X ou clicando fora) pros prints de feedback —
+  agora dá pra abrir/ampliar as fotos e vídeos se o visitante quiser.
+
+**Lição geral:** testar só no navegador desktop não é suficiente pra esse
+tipo de carrossel/flexbox — os bugs de tela estreita só aparecem em
+dispositivo real. Vale sempre pedir print do celular depois de mudanças
+nessas seções.
+
 ## O que pode esperar
 
 - Identidade visual própria (marca pessoal do Adrian) — ainda não definida, fica pra depois
