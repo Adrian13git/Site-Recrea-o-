@@ -497,9 +497,15 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
   .hero__text p { margin-left: auto; margin-right: auto; }
   .hero__actions { justify-content: center; }
   .cards { grid-template-columns: repeat(2, 1fr); }
-  .galeria__item, .feedbacks__item { height: clamp(380px, 92vw, 560px); }
-  .galeria__item { width: min(78vw, 340px); aspect-ratio: auto; }
-  .galeria__item video { object-fit: cover; object-position: center; }
+  .galeria__item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+  .feedbacks__item {
+    width: 100%;
+    height: auto;
+  }
   .panel { padding: 40px 28px; }
 }
 
