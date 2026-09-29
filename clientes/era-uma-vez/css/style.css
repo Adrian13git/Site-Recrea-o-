@@ -304,6 +304,8 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
 /* Recreações / galeria */
 .galeria {
   display: flex;
+  flex: 1 1 0%;
+  min-width: 0;
   gap: 18px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -352,6 +354,8 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
 /* Feedbacks */
 .feedbacks__row {
   display: flex;
+  flex: 1 1 0%;
+  min-width: 0;
   gap: 18px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
