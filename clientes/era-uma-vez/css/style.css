@@ -350,6 +350,23 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
 }
 .galeria__play:hover { background: rgba(28, 22, 38, 0.75); transform: translate(-50%, -50%) scale(1.06); }
 .galeria__item.is-playing .galeria__play { opacity: 0; pointer-events: none; }
+.galeria__expand {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(28, 22, 38, 0.55);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.galeria__expand:hover { background: rgba(28, 22, 38, 0.8); }
 
 /* Feedbacks */
 .feedbacks__row {
@@ -370,7 +387,44 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
   width: auto;
   border-radius: var(--radius);
   box-shadow: 0 8px 20px rgba(104, 59, 169, 0.12);
+  cursor: pointer;
+  transition: transform 0.15s ease;
 }
+.feedbacks__item:hover { transform: translateY(-2px); }
+
+/* Lightbox (ampliar feedback) */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 15, 30, 0.9);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+}
+.lightbox.is-open { display: flex; }
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(248, 254, 244, 0.15);
+  color: var(--white);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.lightbox__close:hover { background: rgba(248, 254, 244, 0.3); }
 
 /* Sobre */
 .sobre {
@@ -443,7 +497,7 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
   .hero__text p { margin-left: auto; margin-right: auto; }
   .hero__actions { justify-content: center; }
   .cards { grid-template-columns: repeat(2, 1fr); }
-  .galeria__item, .feedbacks__item { height: 260px; }
+  .galeria__item, .feedbacks__item { height: clamp(320px, 78vw, 460px); }
   .panel { padding: 40px 28px; }
 }
 
