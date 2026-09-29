@@ -108,6 +108,23 @@ margem transparente sobrando no topo do próprio arquivo (herança do recorte
 do sprite-sheet original) — cortada com ImageMagick `-trim`, e reduzida a
 margem CSS também.
 
+**Atualização (28/09/2026):** ajustes finos de leitura (fonte maior e mais
+grossa no texto do Hero e nos dois textos do CTA final) e corrigido bug de
+layout no texto "Atendemos Mococa..." que vazava pra fora da tela em mobile
+(faltava permitir quebra de linha corretamente no ícone+texto em flex).
+
+**Preparação pra deploy (Vercel, plano gratuito):** confirmado que o site
+(estático, sem backend) roda de boa no plano gratuito — sem risco de travar
+por causa dos vídeos, o limite real é banda mensal, folgado pra um negócio
+local. Feita auditoria pré-deploy: sem erros de português, sem link quebrado,
+sem metadado de localização/GPS em fotos ou vídeos, prints de feedback não
+expõem dado pessoal de cliente. Logos e mascotes estavam com resolução bem
+maior que o exibido — redimensionadas/comprimidas (economia de ~3MB no
+carregamento total, sem perda visual). **Pendência de atenção no dia do
+deploy:** configurar o "Root Directory" do projeto na Vercel apontando pra
+`MazyOS/clientes/era-uma-vez` — senão o resto da pasta MazyOS (memória interna
+do negócio, skills) fica exposto publicamente junto com o site.
+
 ## O que pode esperar
 
 - Identidade visual própria (marca pessoal do Adrian) — ainda não definida, fica pra depois

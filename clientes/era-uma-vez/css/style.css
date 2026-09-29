@@ -196,8 +196,8 @@ h1, h2, h3 {
 }
 .hero__text p {
   color: rgba(248, 254, 244, 0.95);
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   margin-bottom: 32px;
   max-width: 480px;
 }
@@ -391,17 +391,17 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
 /* CTA final */
 .cta-final { text-align: center; position: relative; overflow: hidden; }
 .cta-final__inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
-.cta-final p { margin-bottom: 32px; font-weight: 600; color: rgba(248, 254, 244, 0.95); }
+.cta-final p { margin-bottom: 32px; font-weight: 700; font-size: 1.2rem; color: rgba(248, 254, 244, 0.95); }
 .cta-final__local {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   margin: 0 0 20px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: rgba(248, 254, 244, 0.75);
+  max-width: 100%;
+  text-align: left;
 }
-.cta-final__local svg { flex-shrink: 0; }
+.cta-final__local svg { flex-shrink: 0; margin-top: 3px; }
+.cta-final__local span { flex: 1 1 auto; min-width: 0; }
 
 /* Footer */
 .footer {
