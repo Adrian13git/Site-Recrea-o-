@@ -498,6 +498,8 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
   .hero__actions { justify-content: center; }
   .cards { grid-template-columns: repeat(2, 1fr); }
   .galeria__item, .feedbacks__item { height: clamp(320px, 78vw, 460px); }
+  .galeria__item { width: min(78vw, 340px); aspect-ratio: auto; }
+  .galeria__item video { object-fit: cover; object-position: center; }
   .panel { padding: 40px 28px; }
 }
 
