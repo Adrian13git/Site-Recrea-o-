@@ -507,6 +507,16 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
     height: auto;
   }
   .panel { padding: 40px 28px; }
+  .recreacoes.panel, .feedbacks.panel { padding-left: 12px; padding-right: 12px; }
+  .recreacoes .carousel, .feedbacks .carousel {
+    margin: 0 -24px;
+    gap: 4px;
+  }
+  .recreacoes .carousel__arrow, .feedbacks .carousel__arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 900px) {
