@@ -164,6 +164,46 @@ tipo de carrossel/flexbox — os bugs de tela estreita só aparecem em
 dispositivo real. Vale sempre pedir print do celular depois de mudanças
 nessas seções.
 
+**Atualização (29/09/2026):** rodada de ajustes finos no mobile depois do
+usuário testar bastante no celular real (Samsung S24):
+
+- Interrogação adicionada nos títulos "O que já rolou por aqui?" e "O que
+  nossos clientes dizem?".
+- Ícone de localização (pin) reaproximado da palavra "Atendemos" no CTA
+  final — tirado o `flex-grow`/`text-align:center` que empurrava o texto
+  longe do ícone; agora o bloco inteiro (ícone+texto) é centralizado como
+  unidade, com `max-width` e `margin:auto`.
+- Corrigido espaço roxo vazio no Hero mobile: o fundo usava
+  `background-size` em porcentagem fixa (150%) baseada só na largura, que
+  não cobria a altura toda em telas muito compridas — trocado pra `cover`,
+  que sempre cobre 100% independente da proporção da tela.
+- Emoji 🥳 adicionado no fim da mensagem pré-preenchida dos botões de
+  WhatsApp.
+- Removido botão de play customizado da galeria de vídeos (tinha ficado
+  duplicado com o botão nativo do navegador, que passou a aparecer
+  consistentemente depois que adicionamos os posters).
+- Vídeo da galeria voltado pro formato original 9:16 no mobile (tinha sido
+  forçado pra 3:4 pra ficar "mais largo", mas cortava pessoas nas bordas —
+  usuário preferiu ver todo mundo a ter uma caixa maior).
+- Desativado zoom por pinça no celular (`user-scalable=no` na viewport) —
+  nota: isso prejudica acessibilidade pra quem depende de zoom, mas foi
+  pedido explícito do usuário.
+- Um vídeo específico (`video-oficina-2.mp4`, "Festa do Pedro Luís") mostra
+  o botão de play nativo do Chrome deslocado pra esquerda em vez de
+  centralizado — investigado a fundo (comparado metadado dos 6 vídeos,
+  recomprimido com frame rate constante, conferida a imagem de capa) sem
+  achar causa real; parece ser um comportamento nativo do navegador que não
+  temos como controlar via CSS/código. Usuário aceitou deixar assim.
+
+**Domínio Vercel:** projeto renomeado e domínio customizado
+`.vercel.app` trocado (de `site-recrea-o-era-uma-vez` pra um nome mais
+limpo, ex.: `eraumavez-recreacao.vercel.app`) — gratuito, sem custo, dá pra
+trocar quantas vezes quiser. Domínio antigo configurado pra redirecionar
+pro novo (opção não-destrutiva escolhida, ao invés de excluir o antigo).
+
+Site enviado pro cliente pra avaliação. Combinado: por enquanto fica como
+está, ajustes futuros só se a cliente pedir.
+
 ## O que pode esperar
 
 - Identidade visual própria (marca pessoal do Adrian) — ainda não definida, fica pra depois
