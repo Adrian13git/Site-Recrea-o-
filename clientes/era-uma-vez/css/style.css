@@ -139,7 +139,7 @@ h1, h2, h3 {
   overflow: hidden;
   background:
     linear-gradient(165deg, rgba(116, 68, 228, 0.82) 0%, rgba(104, 59, 169, 0.82) 55%, rgba(79, 44, 133, 0.88) 100%),
-    url("../img/hero-bg.jpg") 62% 22% / 150% no-repeat;
+    url("../img/hero-bg.jpg") 62% 22% / cover no-repeat;
 }
 
 .hero__inner {
@@ -451,14 +451,15 @@ section h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 32px; }
 .cta-final__inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
 .cta-final p { margin-bottom: 32px; font-weight: 700; font-size: 1.2rem; color: rgba(248, 254, 244, 0.95); }
 .cta-final__local {
-  display: inline-flex;
+  display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 8px;
-  margin: 0 0 20px;
-  max-width: 100%;
+  margin: 0 auto 20px;
+  max-width: 360px;
 }
 .cta-final__local svg { flex-shrink: 0; margin-top: 3px; }
-.cta-final__local span { flex: 1 1 auto; min-width: 0; text-align: center; }
+.cta-final__local span { flex: 0 1 auto; min-width: 0; text-align: left; }
 
 /* Footer */
 .footer {
